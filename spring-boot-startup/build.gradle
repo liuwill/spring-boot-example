@@ -13,7 +13,7 @@ buildscript {
     }
 }
 
-group 'com.videopls.mall'
+group 'com.liuwill.example'
 version '0.0.1'
 
 ext.junitPlatformVersion = '1.1.0'
@@ -72,14 +72,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
     compile("org.springframework.boot:spring-boot-starter-aop")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-
-    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
-    compile group: 'mysql', name: 'mysql-connector-java', version: "${sqlDriverVersion}"
-
-    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisStarterVersion}")
-    compile "com.alibaba:druid-spring-boot-starter:${druidVersion}"
-    compile("org.springframework.boot:spring-boot-starter-data-redis")
 
     // https://mvnrepository.com/artifact/com.alibaba/fastjson
     compile group: 'com.alibaba', name: 'fastjson', version: fastjsonVersion
@@ -90,11 +82,6 @@ dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4jVersion
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: sl4jVersion
-
-    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
-    compile group: 'com.squareup.retrofit2', name: 'retrofit', version: "${retrofitVersion}"
-    // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
-    compile group: 'com.squareup.retrofit2', name: 'converter-gson', version: "${retrofitVersion}"
 
     testCompile("org.springframework.boot:spring-boot-starter-test") {
         exclude group: "junit", module: "junit"
@@ -137,13 +124,6 @@ sourceSets {
     }
 }
 
-task createJavaProject {
-    doLast {
-        sourceSets*.java.srcDirs*.each { it.mkdirs() }
-        sourceSets*.resources.srcDirs*.each { it.mkdirs() }
-    }
-}
-
 war {
     baseName = 'store-activity-api'
     version = project.version
@@ -160,30 +140,30 @@ jar {
 }
 
 bootJar {
-    baseName = 'store-activity-api'
+    baseName = 'spring-boot-startup'
     version = 'build'
     classifier = 'boot'
-    mainClassName = 'com.videopls.mall.activity.ActivityApplication'
+    mainClassName = 'com.liuwill.example.startup.StartUpApplication'
 
     launchScript()
 }
 
 bootWar {
-    baseName = 'store-activity-api'
+    baseName = 'spring-boot-startup'
     version = 'build'
-    mainClassName = 'com.videopls.mall.activity.ActivityApplication'
+    mainClassName = 'com.liuwill.example.startup.StartUpApplication'
 
     launchScript()
 }
 
 springBoot {
-    mainClassName = 'com.videopls.mall.activity.ActivityApplication'
+    mainClassName = 'com.liuwill.example.startup.StartUpApplication'
     buildInfo {
         properties {
-            artifact = 'store-activity-api'
+            artifact = 'spring-boot-startup'
             version = 'build'
-            group = 'com.videopls.mall'
-            name = 'Store Activity Api'
+            group = 'com.liuwill.example'
+            name = 'spring boot startup'
         }
     }
 }

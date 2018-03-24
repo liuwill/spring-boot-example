@@ -52,7 +52,15 @@ allprojects {
             // html.stylesheet resources.text.fromFile('config/xsl/checkstyle-custom.xsl')
         }
     }
+}
 
+subprojects {
+    task createJavaProject {
+        doLast {
+            sourceSets*.java.srcDirs*.each { it.mkdirs() }
+            sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+        }
+    }
 }
 
 task cleanRoot(type: Delete) {
