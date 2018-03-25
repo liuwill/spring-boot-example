@@ -19,9 +19,21 @@ buildscript {
 
 allprojects {
     apply plugin: 'java'
-    apply plugin: 'application'
     apply plugin: 'eclipse'
     apply plugin: 'idea'
+
+    repositories {
+        maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+
+        mavenCentral()
+        jcenter()
+        maven { url 'https://repo.spring.io/snapshot' }
+        maven { url 'https://repo.spring.io/milestone' }
+    }
+}
+
+subprojects {
+    apply plugin: 'application'
     apply plugin: 'findbugs'
     apply plugin: 'pmd'
     apply plugin: 'checkstyle'
@@ -40,6 +52,14 @@ allprojects {
         maven { url 'https://repo.spring.io/milestone' }
     }
 
+    task createJavaProject {
+        doLast {
+            sourceSets*.java.srcDirs*.each { it.mkdirs() }
+            sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+        }
+    }
+
+    /*
     checkstyle{
         toolVersion = "${checkStyleVersion}"
         configFile = file('config/checkstyle/checkstyle.xml')
@@ -52,15 +72,7 @@ allprojects {
             // html.stylesheet resources.text.fromFile('config/xsl/checkstyle-custom.xsl')
         }
     }
-}
-
-subprojects {
-    task createJavaProject {
-        doLast {
-            sourceSets*.java.srcDirs*.each { it.mkdirs() }
-            sourceSets*.resources.srcDirs*.each { it.mkdirs() }
-        }
-    }
+    */
 }
 
 task cleanRoot(type: Delete) {

@@ -45,7 +45,7 @@ apply plugin: 'org.junit.platform.gradle.plugin'
 
 sourceCompatibility = 1.8
 
-mainClassName = 'com.videopls.mall.activity.ActivityApplication'
+mainClassName = 'com.liuwill.example.startup.StartUpApplication'
 
 repositories {
     maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
@@ -125,12 +125,12 @@ sourceSets {
 }
 
 war {
-    baseName = 'store-activity-api'
+    baseName = 'spring-boot-startup'
     version = project.version
 }
 
 jar {
-    baseName = 'store-activity-api'
+    baseName = 'spring-boot-startup'
     version = project.version
 
     enabled = true
@@ -205,6 +205,7 @@ tasks.withType(FindBugs) {
     }
 }
 // ] FindBugs End**/
+
 checkstyle {
     toolVersion = '7.8.2'
 }
