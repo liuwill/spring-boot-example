@@ -121,12 +121,12 @@ sourceSets {
 }
 
 war {
-    baseName = 'spring-boot-cloud'
+    baseName = 'spring-cloud-server'
     version = project.version
 }
 
 jar {
-    baseName = 'spring-boot-cloud'
+    baseName = 'spring-cloud-server'
     version = project.version
 
     enabled = true
@@ -136,7 +136,7 @@ jar {
 }
 
 bootJar {
-    baseName = 'spring-boot-cloud'
+    baseName = 'spring-cloud-server'
     version = 'build'
     classifier = 'boot'
     mainClassName = 'com.liuwill.example.cloud.CloudApplication'
@@ -145,7 +145,7 @@ bootJar {
 }
 
 bootWar {
-    baseName = 'spring-boot-cloud'
+    baseName = 'spring-cloud-server'
     version = 'build'
     mainClassName = 'com.liuwill.example.cloud.CloudApplication'
 
@@ -156,7 +156,7 @@ springBoot {
     mainClassName = 'com.liuwill.example.cloud.CloudApplication'
     buildInfo {
         properties {
-            artifact = 'spring-boot-cloud'
+            artifact = 'spring-cloud-server'
             version = 'build'
             group = 'com.liuwill.example'
             name = 'spring boot cloud'
