@@ -1,1 +1,1 @@
-include ':spring-boot-startup', ':spring-boot-kotlin', 'spring-boot-config', ':spring-boot-test', ':spring-boot-data', ':spring-cloud'
+include ':spring-boot-startup', ':spring-boot-kotlin', 'spring-boot-config', ':spring-boot-test', ':spring-boot-data', ':spring-cloud', ':spring-cloud-client'
