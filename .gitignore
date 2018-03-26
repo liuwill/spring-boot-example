@@ -9,3 +9,6 @@ public
 out
 .settings
 .project
+*/gradlew
+*/gradlew.bat
+*/gradle

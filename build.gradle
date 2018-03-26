@@ -78,3 +78,8 @@ subprojects {
 task cleanRoot(type: Delete) {
     delete rootProject.buildDir
 }
+
+// 使用指定版本的gradle
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
+}
