@@ -26,10 +26,18 @@ public class ComputerController {
     private DiscoveryClient client;
 
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
-    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
+    public Integer add(@RequestParam Integer x, @RequestParam Integer y) {
         // ServiceInstance instance = null;// client.getI.getLocalServiceInstance();
-        Integer r = a + b;
+        Integer result = x + y;
         // logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
-        return r;
+        return result;
+    }
+
+    @RequestMapping(value = "/area" ,method = RequestMethod.GET)
+    public double area(@RequestParam double raduis) {
+        // ServiceInstance instance = null;// client.getI.getLocalServiceInstance();
+        double area = Math.PI * Math.pow(raduis, 2);
+        // logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
+        return area;
     }
 }
