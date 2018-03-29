@@ -2,7 +2,6 @@ package com.liuwill.example.consumer.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,9 +27,21 @@ public class ConsumerController {
     }
 
     @HystrixCommand(fallbackMethod = "hiError")
+    @RequestMapping(value = "/area", method = RequestMethod.GET)
+    public String area() {
+        return restTemplate.getForEntity("http://DEMO-SERVICE/area?raduis=4", String.class).getBody();
+    }
+
+    @HystrixCommand(fallbackMethod = "hiError")
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
         return restTemplate.getForEntity("http://DEMO-SERVICE/hello?name=will", String.class).getBody();
+    }
+
+    @HystrixCommand(fallbackMethod = "hiError")
+    @RequestMapping(value = "/wow", method = RequestMethod.GET)
+    public String wow() {
+        return restTemplate.getForEntity("http://DEMO-SERVICE/wow?name=will", String.class).getBody();
     }
 
     public String hiError() {
