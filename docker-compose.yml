@@ -1,0 +1,40 @@
+version: '3'
+services:
+  example-mysql:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - "3306:3306"
+  example-redis:
+    image: redis:4-alpine
+    ports:
+      - "6379:6379"
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+
+  # Run tests in Docker `docker-compose up` on Node.js v4
+  # - install node deps first `docker-compose run agenda npm install`
+  example-server:
+    image: tomcat:9-jre8
+    restart: always
+    volumes:
+      - ./:/var/app
+    ports:
+      - "8888:8080"
+    env_file: .env
+    environment:
+      - PORT=8080
+      - PROFILE=dev
+      - ENABLE_NODE_LOG=YES
+      - LOG_DIR=/var/log
+      - MYSQL_HOST=example-mysql
+    links:
+      - example-mysql
+      - example-redis
