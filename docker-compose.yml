@@ -32,7 +32,7 @@ services:
     environment:
       - PORT=8080
       - PROFILE=dev
-      - ENABLE_NODE_LOG=YES
+      - ENABLE_LOG=YES
       - LOG_DIR=/var/log
       - MYSQL_HOST=example-mysql
     links:

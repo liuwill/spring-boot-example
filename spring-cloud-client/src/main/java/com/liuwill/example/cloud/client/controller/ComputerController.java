@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.StringJoiner;
+
 /**
  * Created by Liu Will - liuwill@live.com on 2018/3/26.
  * Copyright (c) 2012-2017 All Rights Reserved.
@@ -46,7 +48,10 @@ public class ComputerController {
     String author;
 
     @RequestMapping(value = "/author")
-    public String hi(){
-        return author;
+    public String author(){
+        StringJoiner jointer = new StringJoiner(":");
+        jointer.add(author);
+        jointer.add(client.description());
+        return jointer.toString();
     }
 }
