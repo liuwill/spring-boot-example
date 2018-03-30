@@ -36,6 +36,7 @@ spring cloud 配置服务器，[配置仓库](https://github.com/liuwill-project
 
 服务消费者，ribbon实现，使用Hystrix作为断路器
 [http://localhost:8801](http://localhost:8801)
+[http://localhost:8801/hystrix](http://localhost:8801/hystrix)
 
 ### spring-cloud-zuul [demo-router]
 
