@@ -43,4 +43,9 @@ spring cloud 配置服务器，[配置仓库](https://github.com/liuwill-project
 接口路由网关
 [http://localhost:8088](http://localhost:8088)
 
+-----------------------------------
 
+## 其他项目
+[https://gitlab.com/videopls/store-activity-api/](https://gitlab.com/videopls/store-activity-api/)
+[https://gitlab.com/videopls/linz-log-interpreter](https://gitlab.com/videopls/linz-log-interpreter)
+[https://github.com/liuwill-projects/SpringBootKotlin](https://github.com/liuwill-projects/SpringBootKotlin)
