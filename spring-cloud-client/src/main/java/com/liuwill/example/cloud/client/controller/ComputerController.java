@@ -3,6 +3,7 @@ package com.liuwill.example.cloud.client.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,5 +40,13 @@ public class ComputerController {
         double area = Math.PI * Math.pow(raduis, 2);
         // logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return area;
+    }
+
+    @Value("${author}")
+    String author;
+
+    @RequestMapping(value = "/author")
+    public String hi(){
+        return author;
     }
 }
