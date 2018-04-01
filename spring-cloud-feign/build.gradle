@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        // maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
 
         mavenCentral()
         jcenter()
@@ -45,7 +45,7 @@ sourceCompatibility = 1.8
 mainClassName = 'com.liuwill.example.feign.FeignServiceApplication'
 
 repositories {
-    maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    // maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
 
     mavenCentral()
     jcenter()
@@ -95,7 +95,9 @@ dependencies {
 
     compile('org.springframework.cloud:spring-cloud-starter-config')
     compile 'org.springframework.cloud:spring-cloud-starter-eureka:2.0.0.M2'
-    compile('org.springframework.cloud:spring-cloud-starter-feign')
+
+
+    compile('org.springframework.cloud:spring-cloud-starter-openfeign:2.0.0.M2')
     compile 'org.springframework.cloud:spring-cloud-starter-hystrix:2.0.0.M2'
 
     testCompile("org.springframework.boot:spring-boot-starter-test")

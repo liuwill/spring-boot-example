@@ -3,6 +3,7 @@ package com.liuwill.example.feign;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * Created by Liu Will - liuwill@live.com on 2018/3/27.
@@ -14,6 +15,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableFeignClients
 public class FeignServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(FeignServiceApplication.class, args);
