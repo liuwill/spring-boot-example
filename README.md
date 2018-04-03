@@ -27,16 +27,25 @@ spring cloud 配置服务器，[配置仓库](https://github.com/liuwill-project
 服务注册服务器Eureka
 [http://localhost:8761/eureka](http://localhost:8761/eureka)
 
+
 ### spring-cloud-client [demo-service]
 
 服务注册，服务提供者; 消费spring config配置
 [http://localhost:8762/author](http://localhost:8762/author)
+
+
+### spring-cloud-feign [feign-consumer]
+
+服务消费者，feign实现
+[http://localhost:8802](http://localhost:8802)
+
 
 ### spring-cloud-consumer [demo-consumer]
 
 服务消费者，ribbon实现，使用Hystrix作为断路器
 [http://localhost:8801](http://localhost:8801)
 [http://localhost:8801/hystrix](http://localhost:8801/hystrix)
+
 
 ### spring-cloud-zuul [demo-router]
 

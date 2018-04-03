@@ -28,6 +28,8 @@ public class ComputerController {
     @Autowired
     private DiscoveryClient client;
 
+    @Value("${author}") String author;
+
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     public Integer add(@RequestParam Integer x, @RequestParam Integer y) {
         // ServiceInstance instance = null;// client.getI.getLocalServiceInstance();
@@ -37,15 +39,12 @@ public class ComputerController {
     }
 
     @RequestMapping(value = "/area" ,method = RequestMethod.GET)
-    public double area(@RequestParam double raduis) {
+    public double area(@RequestParam double radius) {
         // ServiceInstance instance = null;// client.getI.getLocalServiceInstance();
-        double area = Math.PI * Math.pow(raduis, 2);
+        double area = Math.PI * Math.pow(radius, 2);
         // logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return area;
     }
-
-    @Value("${author}")
-    String author;
 
     @RequestMapping(value = "/author")
     public String author(){

@@ -29,7 +29,7 @@ public class ConsumerController {
     @HystrixCommand(fallbackMethod = "hiError")
     @RequestMapping(value = "/area", method = RequestMethod.GET)
     public String area() {
-        return restTemplate.getForEntity("http://DEMO-SERVICE/area?raduis=4", String.class).getBody();
+        return restTemplate.getForEntity("http://DEMO-SERVICE/area?radius=4", String.class).getBody();
     }
 
     @HystrixCommand(fallbackMethod = "hiError")
