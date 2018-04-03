@@ -10,7 +10,7 @@
 ### spring-boot-config
 
 如何配置Spring Boot项目
-[http://localhost:8080](http://localhost:8011)
+[http://localhost:8011](http://localhost:8011)
 
 -----------------------------------
 
@@ -22,7 +22,7 @@ spring cloud 配置服务器，[配置仓库](https://github.com/liuwill-project
 [http://localhost:8081/](http://localhost:8081/)
 
 
-### spring-cloud-server
+### spring-cloud-server [demo-register]
 
 服务注册服务器Eureka
 [http://localhost:8761/eureka](http://localhost:8761/eureka)
@@ -32,7 +32,7 @@ spring cloud 配置服务器，[配置仓库](https://github.com/liuwill-project
 服务注册，服务提供者; 消费spring config配置
 [http://localhost:8762/author](http://localhost:8762/author)
 
-### spring-cloud-consumer
+### spring-cloud-consumer [demo-consumer]
 
 服务消费者，ribbon实现，使用Hystrix作为断路器
 [http://localhost:8801](http://localhost:8801)
@@ -47,5 +47,7 @@ spring cloud 配置服务器，[配置仓库](https://github.com/liuwill-project
 
 ## 其他项目
 [https://gitlab.com/videopls/store-activity-api/](https://gitlab.com/videopls/store-activity-api/)
+
 [https://gitlab.com/videopls/linz-log-interpreter](https://gitlab.com/videopls/linz-log-interpreter)
+
 [https://github.com/liuwill-projects/SpringBootKotlin](https://github.com/liuwill-projects/SpringBootKotlin)
