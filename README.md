@@ -55,8 +55,4 @@ spring cloud 配置服务器，[配置仓库](https://github.com/liuwill-project
 -----------------------------------
 
 ## 其他项目
-[https://gitlab.com/videopls/store-activity-api/](https://gitlab.com/videopls/store-activity-api/)
-
-[https://gitlab.com/videopls/linz-log-interpreter](https://gitlab.com/videopls/linz-log-interpreter)
-
 [https://github.com/liuwill-projects/SpringBootKotlin](https://github.com/liuwill-projects/SpringBootKotlin)
